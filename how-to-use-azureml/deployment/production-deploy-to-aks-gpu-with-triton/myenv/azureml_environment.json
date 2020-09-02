@@ -1,0 +1,65 @@
+{
+    "name": "my-AzureML-Triton-20.07",
+    "version": null,
+    "environmentVariables": {
+        "EXAMPLE_ENV_VAR": "EXAMPLE_VALUE"
+    },
+    "python": {
+        "userManagedDependencies": false,
+        "interpreterPath": "python",
+        "condaDependenciesFile": null,
+        "baseCondaEnvironment": null,
+        "condaDependencies": {
+            "channels": [
+                "conda-forge"
+            ],
+            "dependencies": [
+                "python=3.6.2",
+                {
+                    "pip": [
+                        "azureml-contrib-services",
+                        "scikit-learn",
+                        "azureml-defaults",
+                        "numpy",
+                        "pillow",
+                        "inference-schema[numpy-support]",
+                        "https://aka.ms/triton/packages/tritonclientutils-2.1.0-py3-none-any.whl",
+                        "https://aka.ms/triton/packages/tritonhttpclient-2.1.0-py3-none-any.whl"
+                    ]
+                }
+            ],
+            "name": "project_environment"
+        }
+    },
+    "docker": {
+        "enabled": false,
+        "baseImage": "mcr.microsoft.com/azureml/openmpi3.1.2-nvidia-tritonserver20.07-py3",
+        "baseDockerfile": null,
+        "sharedVolumes": true,
+        "arguments": [],
+        "baseImageRegistry": {
+            "address": null,
+            "username": null,
+            "password": null,
+            "registryIdentity": null
+        },
+        "platform": {
+            "os": "Linux",
+            "architecture": "amd64"
+        }
+    },
+    "spark": {
+        "repositories": [],
+        "packages": [],
+        "precachePackages": true
+    },
+    "databricks": {
+        "mavenLibraries": [],
+        "pypiLibraries": [],
+        "rcranLibraries": [],
+        "jarLibraries": [],
+        "eggLibraries": []
+    },
+    "r": null,
+    "inferencingStackVersion": null
+}
